@@ -8,33 +8,28 @@
                     <label for="name" class="form-label">Name</label>
                     <input type="text" name="name" class="form-control" id="name" value={{ old('name') }}>
                 </div>
-                @error('name')
-                    <p>{{ $message }}</p>
-                @enderror
+                <x-error field="name"/>
 
                 <div class="mb-3">
                     <label for="username" class="form-label">User Name</label>
                     <input type="text" name="username" class="form-control" id="username" value={{ old('username') }}>
                 </div>
-                @error('username')
-                    <p>{{ $message }}</p>
-                @enderror
+
+                <x-error field="username"/>
 
                 <div class="mb-3">
                     <label for="email" class="form-label">Email address</label>
                     <input type="email" name="email" class="form-control" id="email" value={{ old('email') }}>
                 </div>
-                @error('email')
-                    <p>{{ $message }}</p>
-                @enderror
+
+                <x-error field="email"/>
 
                 <div class="mb-3">
                     <label for="password" class="form-label">Password</label>
                     <input type="password" name="password" class="form-control" id="password">
                 </div>
-                @error('password')
-                    <p>{{ $message }}</p>
-                @enderror
+
+                <x-error field="password"/>
 
                 <button type="submit" class="btn btn-primary w-100">Register</button>
             </form>

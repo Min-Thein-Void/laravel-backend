@@ -11,8 +11,6 @@ use App\Models\User;
 class Blog extends Model
 {
     use HasFactory;
-    protected $guarded = [];
-
     protected $with = ['category', 'author'];
 
     public function scopeFilter($query, $filter) //Blog::latest()
@@ -43,5 +41,21 @@ class Blog extends Model
     public function author()
     {
         return $this->belongsTo(User::class, 'user_id');
+    }
+
+    public function comments(){
+        return $this->hasMany(Comment::class);
+    }
+
+    public function subscribers(){
+        return $this->belongsToMany(User::class);
+    }
+
+    public function unSubscribe(){
+         $this->subscribers()->detach(auth()->id());
+    }
+
+    public function subscribe(){
+         $this->subscribers()->attach(auth()->id());
     }
 }

@@ -5,12 +5,11 @@
             {{ isset($currentCategory) ? $currentCategory->name : 'All Categories' }}
         </button>
         <ul class="dropdown-menu">
-            <li><a href="/" class="dropdown-item">All</a>
-            </li>
+            <li><a href="/" class="dropdown-item">All</a></li>
             @foreach ($categories as $category)
                 <li>
                     <a class="dropdown-item"
-                        href="{{ url('/') . '?' . http_build_query(array_merge(request()->query(), ['category' => $category->slug])) }}">
+                        href="{{ url('/') }}?category={{ $category->slug }}">
                         {{ $category->name }}
                     </a>
                 </li>

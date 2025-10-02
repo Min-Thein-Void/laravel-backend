@@ -1,4 +1,4 @@
-{{-- <section class="px-4 py-5 my-1 text-center">
+<section class="px-4 py-5 my-1 text-center">
     <img
         class="d-block mx-auto mb-4"
         src="logo.png"
@@ -26,10 +26,10 @@
             <a
                 type="button"
                 class="btn btn-outline-secondary btn-lg px-4"
-                href="#blogs"
+                href="blogs"
             >
                 Read Blogs
             </a>
         </div>
     </div>
-</section> --}}
+</section>

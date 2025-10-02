@@ -22,7 +22,6 @@ class UserController extends Controller
             'password' => ['required', 'max:8'],
         ]);
         $user = User::create($formData);
-        //login
         auth()->login($user);
 
         return redirect('/')->with('name','Welcome '.$user->name);
